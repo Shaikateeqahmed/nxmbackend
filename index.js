@@ -6,10 +6,10 @@ const {note} = require("./routes/noteroute.js");
 const {authenticate} = require("./middlewares/authenticate.js");
 require('dotenv').config();
 const app = express();
-app.use(cors({
-    methods: ['GET','POST','DELETE','UPDATE','PUT','PATCH']
-}));
-//app.use(cors({origin:'*'}));
+// app.use(cors({
+//     methods: ['GET','POST','DELETE','UPDATE','PUT','PATCH']
+// }));
+app.use(cors({origin:'*'}));
 app.use(express.json());
 app.use("/user",user);
 app.use(authenticate);

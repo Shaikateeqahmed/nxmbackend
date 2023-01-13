@@ -12,7 +12,7 @@ user.post("/register",async(req,res)=>{
     try{
         const {name,email,password,age} = req.body;
         console.log(req.body);
-        bcrypt.hash(password,process.env.saltround,async(err,hash)=>{
+        bcrypt.hash(password,5,async(err,hash)=>{
             if(err){
                 console.log(err);
             }else{
